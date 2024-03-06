@@ -1,0 +1,17 @@
+@import './normalize.css';
+
+:root {
+	--color-issue7: #ff608c;
+	--color-issue6: #fff;
+	--color-issue5: #00c1b5;
+	--color-issue4: #ff6519;
+	--color-issue3: #ffbe00;
+	--color-issue2: #1d3fbb;
+	--color-issue1: #e30512;
+	--color-text-dark: #000;
+	--color-text-light: #fff;
+}
+
+body {
+	background: var(--color-issue7);
+}
