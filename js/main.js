@@ -51,8 +51,18 @@ document.onkeyup = (e) => {
 
 const issue7 = document.getElementById('issue7');
 const issue6 = document.getElementById('issue6');
+const issue5 = document.getElementById('issue5');
+const issue4 = document.getElementById('issue4');
+const issue3 = document.getElementById('issue3');
+const issue2 = document.getElementById('issue2');
+const issue1 = document.getElementById('issue1');
 
 const scrollToCount = () => {
 	if (count === 7) issue7.scrollIntoView({ behavior: 'smooth' });
 	if (count === 6) issue6.scrollIntoView({ behavior: 'smooth' });
+	if (count === 5) issue5.scrollIntoView({ behavior: 'smooth' });
+	if (count === 4) issue4.scrollIntoView({ behavior: 'smooth' });
+	if (count === 3) issue3.scrollIntoView({ behavior: 'smooth' });
+	if (count === 2) issue2.scrollIntoView({ behavior: 'smooth' });
+	if (count === 1) issue1.scrollIntoView({ behavior: 'smooth' });
 };
