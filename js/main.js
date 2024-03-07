@@ -42,7 +42,7 @@ bodyElement.onwheel = _.debounce(
 	(event) => {
 		updateCountAndScroll(event.deltaY > 0 ? -1 : 1);
 	},
-	200,
+	400,
 	{ leading: true }
 );
 

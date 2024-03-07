@@ -13,36 +13,12 @@
 }
 
 body {
-	background: var(--color-issue7);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
 	transition: background-color 0.5s;
-}
-
-.issue7 {
-	background: var(--color-issue7);
-}
-
-.issue6 {
-	background: var(--color-issue6);
-}
-
-.issue5 {
-	background: var(--color-issue5);
-}
-
-.issue4 {
-	background: var(--color-issue4);
-}
-
-.issue3 {
-	background: var(--color-issue3);
-}
-
-.issue2 {
-	background: var(--color-issue2);
-}
-
-.issue1 {
-	background: var(--color-issue1);
 }
 
 /* Typography */
@@ -118,4 +94,45 @@ p {
 
 .link--pink {
 	color: var(--color-issue7);
+}
+
+/* Issue Block */
+.issue {
+	height: 100vh;
+	max-width: 420px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.issue__image {
+	width: 100%;
+}
+
+.issue7 {
+	background: var(--color-issue7);
+}
+
+.issue6 {
+	background: var(--color-issue6);
+}
+
+.issue5 {
+	background: var(--color-issue5);
+}
+
+.issue4 {
+	background: var(--color-issue4);
+}
+
+.issue3 {
+	background: var(--color-issue3);
+}
+
+.issue2 {
+	background: var(--color-issue2);
+}
+
+.issue1 {
+	background: var(--color-issue1);
 }
