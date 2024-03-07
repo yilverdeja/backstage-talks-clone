@@ -5,6 +5,7 @@ const scrollSection = (event) => {
 	if (event.deltaY > 0 && count > 1) count -= 1;
 	else if (event.deltaY < 0 && count < 7) count += 1;
 	else return;
+	scrollToCount();
 	bodyElement.classList.remove(
 		'issue1',
 		'issue2',
@@ -35,6 +36,7 @@ document.onkeyup = (e) => {
 	if (e.key === 'ArrowUp' && count < 7) count += 1;
 	else if (e.key === 'ArrowDown' && count > 1) count -= 1;
 	else return;
+	scrollToCount();
 	bodyElement.classList.remove(
 		'issue1',
 		'issue2',
@@ -47,14 +49,10 @@ document.onkeyup = (e) => {
 	bodyElement.classList.add(`issue${count}`);
 };
 
-// function isScrolledIntoView(el) {
-//     var rect = el.getBoundingClientRect();
-//     var elemTop = rect.top;
-//     var elemBottom = rect.bottom;
+const issue7 = document.getElementById('issue7');
+const issue6 = document.getElementById('issue6');
 
-//     // Only completely visible elements return true:
-//     var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-//     // Partially visible elements return true:
-//     //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
-//     return isVisible;
-// }
+const scrollToCount = () => {
+	if (count === 7) issue7.scrollIntoView({ behavior: 'smooth' });
+	if (count === 6) issue6.scrollIntoView({ behavior: 'smooth' });
+};
