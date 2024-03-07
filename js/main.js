@@ -1,3 +1,7 @@
+if ('scrollRestoration' in history) {
+	history.scrollRestoration = 'manual';
+}
+
 let countRange = { min: 1, max: 7 };
 let count = countRange.max;
 
