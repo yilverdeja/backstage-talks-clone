@@ -109,6 +109,24 @@ p {
 	width: 100%;
 }
 
+.issue__header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.issue__content {
+	text-align: center;
+}
+
+.issue__content-main > p {
+	margin: 0;
+}
+
+.issue__content-sub {
+}
+
 .issue7 {
 	background: var(--color-issue7);
 }
