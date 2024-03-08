@@ -119,6 +119,7 @@ p {
 
 .navigation .list__item {
 	font-size: 1.8rem;
+	cursor: pointer;
 }
 
 .nav--active {
