@@ -10,6 +10,18 @@ const bodyElement = document.querySelector('body');
 const issues = Array.from({ length: countRange.max }, (_, i) =>
 	document.getElementById(`issue${i + 1}`)
 );
+const navLinks = Array.from({ length: countRange.max }, (_, i) =>
+	document.getElementById(`nav${i + 1}`)
+);
+
+const setNavLinkActive = (newCount) => {
+	navLinks.forEach((navLink, index) => {
+		navLink.classList.remove('nav--active');
+		if (newCount === index + 1) {
+			navLink.classList.add('nav--active');
+		}
+	});
+};
 
 const applyClassToBody = (newCount) => {
 	// remove all issue classes
@@ -35,6 +47,21 @@ const updateCountAndScroll = (delta) => {
 		count = newCount;
 		applyClassToBody(count);
 		scrollToIssue(count);
+		setNavLinkActive(count);
+	}
+};
+
+const updateCountAndScrollV2 = (thisCount) => {
+	const newCount = Math.min(
+		Math.max(thisCount, countRange.min),
+		countRange.max
+	);
+
+	if (newCount !== count) {
+		count = newCount;
+		applyClassToBody(count);
+		scrollToIssue(count);
+		setNavLinkActive(count);
 	}
 };
 

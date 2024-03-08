@@ -102,6 +102,40 @@ p {
 	color: var(--color-issue7);
 }
 
+/* Lists */
+.list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.list__item {
+	margin-bottom: 1rem;
+}
+
+/* Navigation */
+.navigation {
+	display: none;
+}
+
+.navigation .list__item {
+	font-size: 1.8rem;
+}
+
+.nav--active {
+	font-weight: 700;
+}
+
+@media screen and (min-width: 1024px) {
+	.navigation {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		z-index: 100;
+		padding: 4rem;
+		display: block;
+	}
+}
+
 /* Header */
 .header {
 	text-align: center;
@@ -131,16 +165,16 @@ p {
 
 /* Footer */
 .footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	padding: 4rem;
-	max-width: 250px;
 	display: none;
 }
 
 @media screen and (min-width: 1024px) {
 	.footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		padding: 4rem;
+		max-width: 250px;
 		display: block;
 	}
 }
