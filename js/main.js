@@ -38,6 +38,7 @@ const updateCountAndScroll = (delta) => {
 	}
 };
 
+// desktop control
 bodyElement.onwheel = _.debounce(
 	(event) => {
 		updateCountAndScroll(event.deltaY > 0 ? -1 : 1);
@@ -45,6 +46,21 @@ bodyElement.onwheel = _.debounce(
 	400,
 	{ leading: true }
 );
+
+// mobile control
+var touchStart;
+bodyElement.ontouchstart = (event) => {
+	touchStart = event.touches[0].clientY;
+};
+
+bodyElement.ontouchend = (event) => {
+	var touchEnd = event.changedTouches[0].clientY;
+	if (touchStart > touchEnd + 5) {
+		updateCountAndScroll(-1);
+	} else if (touchStart < touchEnd - 5) {
+		updateCountAndScroll(1);
+	}
+};
 
 document.onkeyup = (e) => {
 	if (e.key === 'ArrowUp') {

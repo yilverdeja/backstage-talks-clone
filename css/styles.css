@@ -17,8 +17,14 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	overflow: hidden;
 	transition: background-color 0.5s;
+	overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		overflow: hidden;
+	}
 }
 
 /* Typography */
@@ -96,6 +102,33 @@ p {
 	color: var(--color-issue7);
 }
 
+/* Header */
+.header {
+	text-align: center;
+	position: fixed;
+	top: 0;
+	display: flex;
+	align-items: end;
+	justify-content: center;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 4rem;
+}
+
+.header > h2 {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.header {
+		justify-content: space-between;
+	}
+
+	.header > h2 {
+		display: block;
+	}
+}
+
 /* Issue Block */
 .issue {
 	height: 100vh;
@@ -114,6 +147,10 @@ p {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.issue__heading {
+	margin-top: 0;
 }
 
 .issue__content {
