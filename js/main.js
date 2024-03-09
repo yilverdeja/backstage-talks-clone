@@ -5,8 +5,8 @@ if ('scrollRestoration' in history) {
 let countRange = { min: 1, max: 7 };
 let count = countRange.max;
 
-// cache body and issue elements
-const bodyElement = document.querySelector('body');
+// cache elements
+const wrapperElement = document.querySelector('.fullpage-wrapper');
 const issues = Array.from({ length: countRange.max }, (_, i) =>
 	document.getElementById(`issue${i + 1}`)
 );
@@ -23,13 +23,13 @@ const setNavLinkActive = (newCount) => {
 	});
 };
 
-const applyClassToBody = (newCount) => {
+const applyClassToWrapper = (newCount) => {
 	// remove all issue classes
-	bodyElement.classList.remove(
+	wrapperElement.classList.remove(
 		...Array.from({ length: countRange.max }, (_, i) => `issue${i + 1}`)
 	);
 	// add new issue class
-	bodyElement.classList.add(`issue${newCount}`);
+	wrapperElement.classList.add(`issue${newCount}`);
 };
 
 const scrollToIssue = (newCount) => {
@@ -45,7 +45,7 @@ const updateCountAndScroll = (delta) => {
 
 	if (newCount !== count) {
 		count = newCount;
-		applyClassToBody(count);
+		applyClassToWrapper(count);
 		scrollToIssue(count);
 		setNavLinkActive(count);
 	}
@@ -59,14 +59,14 @@ const updateCountAndScrollV2 = (thisCount) => {
 
 	if (newCount !== count) {
 		count = newCount;
-		applyClassToBody(count);
+		applyClassToWrapper(count);
 		scrollToIssue(count);
 		setNavLinkActive(count);
 	}
 };
 
 // desktop control
-bodyElement.onwheel = _.debounce(
+wrapperElement.onwheel = _.debounce(
 	(event) => {
 		updateCountAndScroll(event.deltaY > 0 ? -1 : 1);
 	},
@@ -76,11 +76,11 @@ bodyElement.onwheel = _.debounce(
 
 // mobile control
 var touchStart;
-bodyElement.ontouchstart = (event) => {
+wrapperElement.ontouchstart = (event) => {
 	touchStart = event.touches[0].clientY;
 };
 
-bodyElement.ontouchend = (event) => {
+wrapperElement.ontouchend = (event) => {
 	var touchEnd = event.changedTouches[0].clientY;
 	if (touchStart > touchEnd + 5) {
 		updateCountAndScroll(-1);
