@@ -135,6 +135,10 @@ p {
 		padding: 4rem;
 		display: block;
 	}
+
+	.navigation .list__item:not(.nav--active):hover {
+		text-decoration: underline;
+	}
 }
 
 /* Header */
@@ -144,7 +148,8 @@ p {
 	top: 0;
 	display: flex;
 	align-items: end;
-	justify-content: center;
+	/* justify-content: center; */
+	justify-content: space-between;
 	width: 100%;
 	box-sizing: border-box;
 	padding: 0 4rem;
@@ -161,6 +166,33 @@ p {
 
 	.header > h2 {
 		display: block;
+	}
+}
+
+/* mobile menu */
+.hamburger {
+	width: 2rem;
+	vertical-align: center;
+	margin: auto 0;
+}
+
+.hamburger__nav.open {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: gold;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1000;
+}
+
+.header .hamburger {
+	display: block;
+}
+
+@media screen and (min-width: 1024px) {
+	.header .hamburger {
+		display: none;
 	}
 }
 
