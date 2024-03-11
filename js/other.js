@@ -2,11 +2,11 @@ const createIssue = (issue) => {
 	const linkColor = issue.linkColor === 'pink' ? 'pink' : 'white';
 	const pictureElement = `
     <picture class="issue__picture">
-        <source srcset="images/issue_${issue.id}.webp" type="image/webp">
-        <source srcset="images/issue_${issue.id}.png" type="image/png">
+        <source srcset="${issue.img_webp}" type="image/webp">
+        <source srcset="${issue.img_png}" type="image/png">
         <img
             class="issue__image"
-            src="images/issue_${issue.id}.png"
+            src="${issue.img_png}"
             alt="Issue ${issue.id} Book Cover"
         />
     </picture>`;
@@ -86,35 +86,49 @@ const issuesData = [
 			{ url: '#', location: 'UK & Overseas' },
 		],
 		other: '#',
+		img_webp: require('../images/issue_7.webp'),
+		img_png: require('../images/issue_7.png'),
 	},
 	{
 		id: 6,
 		buy: [{ url: '#', location: '' }],
 		other: '#',
 		linkColor: 'pink',
+		img_webp: require('../images/issue_6.webp'),
+		img_png: require('../images/issue_6.png'),
 	},
 	{
 		id: 5,
 		buy: [{ url: '#', location: '' }],
 		other: '#',
+		img_webp: require('../images/issue_5.webp'),
+		img_png: require('../images/issue_5.png'),
 	},
 	{
 		id: 4,
 		other: '#',
+		img_webp: require('../images/issue_4.webp'),
+		img_png: require('../images/issue_4.png'),
 	},
 	{
 		id: 3,
 		buy: [{ url: '#', location: '' }],
 		other: '#',
+		img_webp: require('../images/issue_3.webp'),
+		img_png: require('../images/issue_3.png'),
 	},
 	{
 		id: 2,
 		buy: [{ url: '#', location: '' }],
 		other: '#',
+		img_webp: require('../images/issue_2.webp'),
+		img_png: require('../images/issue_2.png'),
 	},
 	{
 		id: 1,
 		other: '#',
+		img_webp: require('../images/issue_1.webp'),
+		img_png: require('../images/issue_1.png'),
 	},
 ];
 
