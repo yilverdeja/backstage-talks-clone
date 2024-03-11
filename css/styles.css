@@ -216,10 +216,11 @@ p {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 .issue__image {
-	width: 100%;
+	width: 90%;
 }
 
 .issue__header {
@@ -242,6 +243,12 @@ p {
 }
 
 .issue__content-sub {
+}
+
+@media screen and (min-width: 768px) {
+	.issue__image {
+		width: 100%;
+	}
 }
 
 .issue7 {
