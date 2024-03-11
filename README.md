@@ -1,8 +1,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7b9680c7-fef6-41a7-ac90-f3b8dd6faf3b/deploy-status)](https://app.netlify.com/sites/backstage-talks-clone/deploys)
 
-<img src="https://github.com/yilverdeja/backstage-talks-clone/assets/29952939/ec50bbea-7902-4ee8-93f3-98dff66a5d9c" alt="drawing" height="300"/>
-<img src="https://github.com/yilverdeja/backstage-talks-clone/assets/29952939/e63cca85-ef37-49a3-ad27-445829f94979" alt="drawing" height="300"/>
-<img src="https://github.com/yilverdeja/backstage-talks-clone/assets/29952939/2c7e2506-a8c7-4515-a4d3-68cc9911d290" alt="drawing" height="300"/>
+<img src="https://github.com/yilverdeja/backstage-talks-clone/assets/29952939/ec50bbea-7902-4ee8-93f3-98dff66a5d9c" alt="drawing" height="250"/>
+<img src="https://github.com/yilverdeja/backstage-talks-clone/assets/29952939/e63cca85-ef37-49a3-ad27-445829f94979" alt="drawing" height="250"/>
+<img src="https://github.com/yilverdeja/backstage-talks-clone/assets/29952939/2c7e2506-a8c7-4515-a4d3-68cc9911d290" alt="drawing" height="250"/>
 
 # Backstage Talks Clone
 
