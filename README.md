@@ -40,3 +40,11 @@ It's as easy as just adding the following script to the page, and voila! Dev too
 <script src="//cdn.jsdelivr.net/npm/eruda"></script>
 <script>eruda.init();</script>
 ```
+
+### Working with Template Literals
+We can inject HTML elements into the DOM using template literals in javascript. Here is an [article](https://medium.com/@tforward/get-html-to-the-dom-fast-with-js-template-literals-insertadjacenthtml-24b8aa4e8807) describing it. 
+
+However, it's probably best for **future iterations** to structure the files following an [MVC pattern](https://www.freecodecamp.org/news/the-model-view-controller-pattern-mvc-architecture-and-frameworks-explained/).
+
+### Loading images dynamically in Javascript
+Within the template literals, I initially tried loading the pictures dynamically depending on the issue id, but that did not work. During build time, the bundler doesn't recognize that the string literal for the image urls are for image urls so it cannot import it properly. Hence we need to import it into the javascript file either by using `import` or  `require` statements.
