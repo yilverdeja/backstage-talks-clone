@@ -14,6 +14,7 @@
 
 body {
 	overflow: hidden;
+	transition: background-color 0.5s;
 }
 
 .fullpage-wrapper {
@@ -21,7 +22,6 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	transition: background-color 0.5s;
 }
 
 /* Typography */
@@ -112,6 +112,7 @@ p {
 /* Navigation */
 .navigation {
 	display: none;
+	background-color: transparent;
 }
 
 .navigation .list__item {
@@ -121,6 +122,68 @@ p {
 
 .nav--active {
 	font-weight: 700;
+}
+
+/* Mobile Navigation */
+@media screen and (max-width: 1023px) {
+	.navigation {
+		position: fixed;
+		/* top: -100%; Hide off-screen */
+		transform: translateY(-100vh);
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 1000;
+		overflow-y: auto; /* Enable scrolling */
+		transition: transform 0.3s ease, background-color 0.5s; /* Smooth transition for sliding down */
+		display: block; /* Override the display none */
+		box-sizing: border-box;
+		padding: 4rem;
+		padding-top: 6rem;
+	}
+
+	.issue1 .navigation {
+		background-color: var(--color-issue1);
+	}
+
+	.issue2 .navigation {
+		background-color: var(--color-issue2);
+	}
+
+	.issue3 .navigation {
+		background-color: var(--color-issue3);
+	}
+
+	.issue4 .navigation {
+		background-color: var(--color-issue4);
+	}
+
+	.issue5 .navigation {
+		background-color: var(--color-issue5);
+	}
+
+	.issue6 .navigation {
+		background-color: var(--color-issue6);
+	}
+
+	.issue7 .navigation {
+		background-color: var(--color-issue7);
+	}
+
+	.navigation.open {
+		/* top: 0; Slide down to show */
+		transform: translateY(0);
+	}
+
+	.hamburger {
+		display: block;
+		border: none;
+		background: transparent;
+	}
+
+	.hamburger:focus {
+		outline: none;
+	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -144,12 +207,12 @@ p {
 	position: fixed;
 	top: 0;
 	display: flex;
-	align-items: end;
-	/* justify-content: center; */
+	align-items: center;
 	justify-content: space-between;
 	width: 100%;
 	box-sizing: border-box;
 	padding: 0 4rem;
+	z-index: 1100;
 }
 
 .header > h2 {
@@ -167,24 +230,11 @@ p {
 }
 
 /* mobile menu */
-.hamburger {
+.hamburger img {
 	width: 2rem;
 	vertical-align: center;
 	margin: auto 0;
-}
-
-.hamburger__nav.open {
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: gold;
-	width: 100vw;
-	height: 100vh;
-	z-index: 1000;
-}
-
-.header .hamburger {
-	display: block;
+	padding-top: 8px;
 }
 
 @media screen and (min-width: 1024px) {

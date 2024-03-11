@@ -6,6 +6,7 @@ let countRange = { min: 1, max: 7 };
 let count = countRange.max;
 
 // cache elements
+const bodyElement = document.querySelector('body');
 const wrapperElement = document.querySelector('.fullpage-wrapper');
 const issues = Array.from({ length: countRange.max }, (_, i) =>
 	document.getElementById(`issue${i + 1}`)
@@ -23,13 +24,16 @@ const setNavLinkActive = (newCount) => {
 	});
 };
 
+var hamburger = document.querySelector('.hamburger');
+var navigation = document.querySelector('.navigation');
+
 const applyClassToWrapper = (newCount) => {
 	// remove all issue classes
-	wrapperElement.classList.remove(
+	bodyElement.classList.remove(
 		...Array.from({ length: countRange.max }, (_, i) => `issue${i + 1}`)
 	);
 	// add new issue class
-	wrapperElement.classList.add(`issue${newCount}`);
+	bodyElement.classList.add(`issue${newCount}`);
 };
 
 const scrollToIssue = (newCount) => {
@@ -63,7 +67,14 @@ const updateCountAndScrollV2 = (thisCount) => {
 		scrollToIssue(count);
 		setNavLinkActive(count);
 	}
+
+	navigation.classList.remove('open');
 };
+
+// bind hamburger menu
+hamburger.addEventListener('click', function () {
+	navigation.classList.toggle('open');
+});
 
 // nav links on click bind
 navLinks.forEach((navLink, index) => {
