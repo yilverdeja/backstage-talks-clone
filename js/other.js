@@ -70,9 +70,7 @@ const createNavigation = (issues) => {
 				(issue, index) =>
 					`<li id="nav${issue.id}" class="${
 						index === 0 ? 'list__item nav--active' : 'list__item'
-					}" onclick="updateCountAndScrollV2(${issue.id})">Issue ${
-						issue.id
-					}</li>`
+					}">Issue ${issue.id}</li>`
 			)
 			.join('')}
     </ul>`;

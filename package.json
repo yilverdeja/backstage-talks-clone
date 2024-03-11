@@ -3,7 +3,8 @@
 	"source": "index.html",
 	"scripts": {
 		"start": "parcel",
-		"build": "parcel build"
+		"build": "npm run clean && parcel build",
+		"clean": "rm -rf dist/*"
 	},
 	"devDependencies": {
 		"parcel": "^2.12.0"

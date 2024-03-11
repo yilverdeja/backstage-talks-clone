@@ -65,6 +65,13 @@ const updateCountAndScrollV2 = (thisCount) => {
 	}
 };
 
+// nav links on click bind
+navLinks.forEach((navLink, index) => {
+	navLink.onclick = () => {
+		updateCountAndScrollV2(index + 1);
+	};
+});
+
 // desktop control
 wrapperElement.onwheel = _.debounce(
 	(event) => {
