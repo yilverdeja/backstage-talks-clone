@@ -1,0 +1,11 @@
+{
+	"name": "backstage-talks-clone",
+	"source": "index.html",
+	"scripts": {
+		"start": "parcel",
+		"build": "parcel build"
+	},
+	"devDependencies": {
+		"parcel": "^2.12.0"
+	}
+}
