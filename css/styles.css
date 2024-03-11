@@ -219,6 +219,12 @@ p {
 	align-items: center;
 }
 
+.issue__picture {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .issue__image {
 	width: 90%;
 }

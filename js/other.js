@@ -1,7 +1,7 @@
 const createIssue = (issue) => {
 	const linkColor = issue.linkColor === 'pink' ? 'pink' : 'white';
 	const pictureElement = `
-    <picture>
+    <picture class="issue__picture">
         <source srcset="images/issue_${issue.id}.webp" type="image/webp">
         <source srcset="images/issue_${issue.id}.png" type="image/png">
         <img
@@ -63,6 +63,21 @@ const createIssue = (issue) => {
     </section>`;
 };
 
+const createNavigation = (issues) => {
+	return `<ul class="list">
+        ${issues
+			.map(
+				(issue, index) =>
+					`<li id="nav${issue.id}" class="${
+						index === 0 ? 'list__item nav--active' : 'list__item'
+					}" onclick="updateCountAndScrollV2(${issue.id})">Issue ${
+						issue.id
+					}</li>`
+			)
+			.join('')}
+    </ul>`;
+};
+
 const issuesData = [
 	{
 		id: 7,
@@ -103,6 +118,12 @@ const issuesData = [
 	},
 ];
 
+// inject navigation elements
+const navigationSelector = document.querySelector('.navigation');
+const nav = createNavigation(issuesData);
+navigationSelector.insertAdjacentHTML('afterbegin', nav);
+
+// inject main content
 const mainSelector = document.querySelector('main');
 const html = issuesData.map((issueData) => createIssue(issueData)).join('');
 mainSelector.insertAdjacentHTML('afterbegin', html);
