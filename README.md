@@ -1,5 +1,9 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7b9680c7-fef6-41a7-ac90-f3b8dd6faf3b/deploy-status)](https://app.netlify.com/sites/backstage-talks-clone/deploys)
 
+<img src="https://github.com/yilverdeja/backstage-talks-clone/assets/29952939/ec50bbea-7902-4ee8-93f3-98dff66a5d9c" alt="drawing" height="300"/>
+<img src="https://github.com/yilverdeja/backstage-talks-clone/assets/29952939/e63cca85-ef37-49a3-ad27-445829f94979" alt="drawing" height="300"/>
+<img src="https://github.com/yilverdeja/backstage-talks-clone/assets/29952939/2c7e2506-a8c7-4515-a4d3-68cc9911d290" alt="drawing" height="300"/>
+
 # Backstage Talks Clone
 
 A [clone](https://backstage-talks-clone.netlify.app) of the [backstage talks](https://backstagetalks.com/) website
@@ -15,12 +19,6 @@ In addition, I wanted to create this page as a layout to my pottery website.
 ## Interactions
 
 On desktop, swipe up/down or use the keyboard up and down keys to move between issues. On the mobile version, just swipe up and down to move to the different issues.
-
-<!-- TODO: Add the rest of the content below when the site is done  -->
-
-## How does it work?
-
-Tell us how it works...
 
 ## New Learnings
 ### Development on Desktop vs Mobile
@@ -48,3 +46,9 @@ However, it's probably best for **future iterations** to structure the files fol
 
 ### Loading images dynamically in Javascript
 Within the template literals, I initially tried loading the pictures dynamically depending on the issue id, but that did not work. During build time, the bundler doesn't recognize that the string literal for the image urls are for image urls so it cannot import it properly. Hence we need to import it into the javascript file either by using `import` or  `require` statements.
+
+## Todo
+In order to improve this website, the following should be looked into:
+* urls to the correct link items
+* use the MVC pattern to organize the javascript files (and make the file naming more meaninful)
+* refactor, and remove redundencies and duplicated code (slipped 🍌 in the end and css and js files are quite messy)
